@@ -11,6 +11,7 @@
         <link href="assets/css/code.css" rel="stylesheet" type="text/css">
         <link href="assets/css/colorbox.css" rel="stylesheet" type="text/css">
         <link href="assets/css/theme.css" rel="stylesheet" type="text/css">
+            <link href="assets/css/custom.css" rel="stylesheet" type="text/css">
 
     
             <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
@@ -35,11 +36,24 @@
     <meta property="og:site_name" content="BlueTides Simulation">
     <meta property="og:title" content="BlueTides Simulation">
     <meta property="og:url" content="http://bluetides-simulation.org/">
-    <meta property="og:description" content="BlueTides is a hydrodynamical simulation of the early universe during its first
-billion years.
-This site is under construction.">
+    <meta property="og:description" content="BlueTides was run on the BlueWaters super computer at NCSA from \(z=99\) to \(z=8.0\)
+It is the largest hydrodynamic simulation ever performed at high redshift.
+
+
+
+
+
+BlueTides by Numbers
+
+
+
+
+
+
+Number ">
     <meta property="og:type" content="article">
-    <meta property="article:published_time" content="2015-04-17T18:13:40.283498+00:00">
+    <meta property="article:published_time" content="2015-04-30T06:50:55.429957+00:00">
+           <meta property="article:tag" content="mathjax">
 
     
 
@@ -71,8 +85,8 @@ This site is under construction.">
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
                 
-                <li>
-<a href="about">About BlueTides</a>
+                <li class="active">
+<a href=".">About BlueTides</a>
                 </li>
 <li>
 <a href="datarelease">Data Release</a>
@@ -122,12 +136,87 @@ This site is under construction.">
     </header>
     <div class="e-content entry-content" itemprop="articleBody text">
     <div>
-<p>BlueTides is a hydrodynamical simulation of the early universe during its first
-billion years.</p>
-<p>This site is under construction.</p>
+<p>BlueTides was run on the BlueWaters super computer at NCSA from <span class="math">\(z=99\)</span> to <span class="math">\(z=8.0\)</span></p>
+<p>It is the largest hydrodynamic simulation ever performed at high redshift.</p>
+<!-- .. class:: affix col-md-pull-1 -->
+<!-- .. contents:: -->
+<!-- Table of contents -->
+<div class="row container">
+<div class="panel col-md-12 container">
+<p class="panel-heading h4">BlueTides by Numbers</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="32%">
+<col width="68%">
+</colgroup>
+<tbody valign="top">
+<tr>
+<td>Number of Particles</td>
+<td>697 Billion (Baryon + Dark Matter)</td>
+</tr>
+<tr>
+<td>Boxsize</td>
+<td>400 Mpc/h per side</td>
+</tr>
+<tr>
+<td>Cosmology</td>
+<td>WMAP 9 Year cosmology</td>
+</tr>
+<tr>
+<td>MPI ranks</td>
+<td>81000</td>
+</tr>
+<tr>
+<td>OpenMP threads</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="row container">
+<div class="panel col-md-6 container">
+<p class="panel-heading h4">Subgrid Physics</p>
+<ul class="simple">
+<li>Star formation</li>
+<li>AGN feedback</li>
+<li>Primodial and Metal Cooling</li>
+<li>Fluctuating UV background</li>
+</ul>
+</div>
+<div class="panel col-md-6 container">
+<p class="panel-heading h4">Computational Methods</p>
+<ul class="simple">
+<li>Pressure-entropy smoothed particle hydrodyanmics</li>
+<li>Tree and Particle Mesh N-Body gravity solver</li>
+</ul>
+</div>
+</div>
+<div class="row container">
+<div class="panel col-md-6 container">
+<p class="panel-heading h4">Non-numerical Algorithms</p>
+<ul class="simple">
+<li>Pencil Fourier Transformation domains</li>
+<li>Distributed multi-threading BH-Tree</li>
+<li>Uniformly-accessible striped snapshot files</li>
+<li>Partition-based parallel sorting</li>
+<li>Friend-of-Friend clustering and object identification</li>
+</ul>
+</div>
+<div class="panel col-md-6 container">
+<p class="panel-heading h4">Programming Environment</p>
+<ul class="simple">
+<li>Cray XE computing nodes with 16 floating units and 32 integer units</li>
+<li>Cray C/C++ compiler with OpenMP support</li>
+</ul>
+</div>
+</div>
 </div>
     </div>
     
+        <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});</script>
+        <script src="assets/js/mathjax.js"></script>
 
 </article>
 

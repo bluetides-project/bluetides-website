@@ -3,7 +3,7 @@
     <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>About BlueTides | BlueTides Simulation</title>
+    <title>galleries | BlueTides Simulation</title>
 
     
             <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -11,11 +11,12 @@
         <link href="../assets/css/code.css" rel="stylesheet" type="text/css">
         <link href="../assets/css/colorbox.css" rel="stylesheet" type="text/css">
         <link href="../assets/css/theme.css" rel="stylesheet" type="text/css">
+            <link href="../assets/css/custom.css" rel="stylesheet" type="text/css">
 
     
             <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
 
-      <link rel="canonical" href="http://bluetides-simulation.org/about/">
+      <link rel="canonical" href="http://bluetides-simulation.org/galleries/">
 
 
 
@@ -28,30 +29,16 @@
 
 
 
-    
-
-    <meta name="author" content="Yu Feng">
-    
-    <meta property="og:site_name" content="BlueTides Simulation">
-    <meta property="og:title" content="About BlueTides">
-    <meta property="og:url" content="http://bluetides-simulation.org/about/">
-    <meta property="og:description" content="BlueTides is a hydrodynamical simulation of the early universe during its first
-billion years.
 
 
-
-
-
-Number of Particles| 697 Billion (Baryon + Dark Matter)
-Boxsize | 400 Mpc/h per side
-Cosmology|  WMA">
-    <meta property="og:type" content="article">
-    <meta property="article:published_time" content="2015-04-17T18:28:48.124131+00:00">
-
-    
-
-    
-
+<style type="text/css">
+    .image-block {
+        display: inline-block;
+    }
+    .flowr_row {
+        width: 100%;
+    }
+    </style>
 
 
 </head>
@@ -79,7 +66,7 @@ Cosmology|  WMA">
             <ul class="nav navbar-nav">
                 
                 <li>
-<a href="../about">About BlueTides</a>
+<a href="../">About BlueTides</a>
                 </li>
 <li>
 <a href="../datarelease">Data Release</a>
@@ -119,35 +106,20 @@ Cosmology|  WMA">
         <div class="row">
             
             
-<article class="storypage" itemscope="itemscope" itemtype="http://schema.org/Article">
-    <header>
-        
-    <h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">About BlueTides</a></h1>
-
-        
-
-    </header>
-    <div class="e-content entry-content" itemprop="articleBody text">
-    <div>
-<p>BlueTides is a hydrodynamical simulation of the early universe during its first
-billion years.</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="100%">
-</colgroup>
-<tbody valign="top">
-<tr>
-<td>Number of Particles| 697 Billion (Baryon + Dark Matter)
-Boxsize | 400 Mpc/h per side
-Cosmology|  WMAP 9 Year cosmology (list the numbers)</td>
-</tr>
-</tbody>
-</table>
-</div>
-    </div>
     
+<nav class="breadcrumbs">
+<ul class="breadcrumb">
+        <li><a href="#">galleries</a></li>
+</ul>
+</nav>
 
-</article>
+    <h1>galleries</h1>
+    <ul>
+        <li><a href="bluetides/"><i class="glyphicon
+        glyphicon-folder-open"></i> bluetides</a></li>
+    </ul>
+
+<div id="gallery_container"></div>
 
         </div>
         <!--End of body content-->
@@ -158,7 +130,6 @@ Contents © 2015  <a href="mailto:yfeng1@berkeley.edu">Yu Feng</a> |
 Powered by <a href="http://getnikola.com" rel="nofollow">Nikola</a> | 
 Theme is <a href="http://bootswatch.com/readable/">Readable</a>
 
-                | <a href="https://github.com/rainwoodman/bluetides-website/edit/master/pages/about.rst">Edit</a>
             
         </footer>
     </div>
@@ -180,6 +151,45 @@ Theme is <a href="http://bootswatch.com/readable/">Readable</a>
     </script>
     <!-- end fancy dates -->
     
+<script src="../assets/js/flowr.plugin.js"></script>
+<script>
+jsonContent = [];
+$("#gallery_container").flowr({
+        data : jsonContent,
+        height : 180*.6,
+        padding: 5,
+        rows: -1,
+        render : function(params) {
+            // Just return a div, string or a dom object, anything works fine
+            img = $("<img />").attr({
+                'src': params.itemData.url_thumb,
+                'width' : params.width,
+                'height' : params.height
+            }).css('max-width', '100%');
+            link = $( "<a></a>").attr({
+                'href': params.itemData.url,
+                'class': 'image-reference'
+            });
+            div = $("<div />").addClass('image-block').attr({
+                'title': params.itemData.title,
+                'data-toggle': "tooltip",
+            });
+            link.append(img);
+            div.append(link);
+            div.hover(div.tooltip());
+            return div;
+        },
+        itemWidth : function(data) { return data.size.w; },
+        itemHeight : function(data) { return data.size.h; },
+        complete : function(params) {
+            if( jsonContent.length > params.renderedItems ) {
+                nextRenderList = jsonContent.slice( params.renderedItems );
+            }
+        }
+    });
+$("a.image-reference").colorbox({rel:"gal", maxWidth:"100%",maxHeight:"100%",scalePhotos:true});
+</script>
+
 
 
 
