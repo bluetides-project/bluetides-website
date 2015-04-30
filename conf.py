@@ -315,7 +315,9 @@ DATE_FORMAT = '%Y %b %d'
 # For creating favicons, take a look at:
 # http://www.netmagazine.com/features/create-perfect-favicon
 FAVICONS = {
-#     ("icon", "/icon_128x128.png", "128x128"),
+     ("icon", "/files/icon_32x32.png", "32x32"),
+     ("icon", "/files/icon_64x64.png", "64x64"),
+     ("icon", "/files/icon_200x200.png", "200x200"),
 }
 
 # Show only teasers in the index pages? Defaults to False.
