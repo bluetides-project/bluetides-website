@@ -64,7 +64,7 @@ TRANSLATIONS = {
 # You should provide a key-value pair for each used language.
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ('/about', 'About BlueTides'),
+        ('/', 'About BlueTides'),
         ('/datarelease', 'Data Release'),
         ('/coderelease', 'Code Release'),
         ('/people', 'People'),

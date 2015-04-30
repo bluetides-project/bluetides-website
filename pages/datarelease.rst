@@ -6,7 +6,8 @@
 Data Release
 ============
 
-We intend to release the BlueTides data to public.
+The team is still cleaning the data. 
+We will release the BlueTides data to public.
 
 - Halo Catalogue
 
@@ -14,7 +15,6 @@ We intend to release the BlueTides data to public.
 
 - Full sample of star and black hole particles
 
-The team is still cleaning the data. 
 
-Like us via Facebook to receive a notification when the data is ready.
+Check back later.
 

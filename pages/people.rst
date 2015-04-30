@@ -6,16 +6,45 @@
 BlueTides Team
 ==============
 
-Yu Feng
+.. container:: panel col-md-4 text-center
 
-Tiziana Di Matteo
+    Nicholas Battaglia
 
-Rupert A Croft
+    Princeton University
 
-Simeon Bird
+.. container:: panel col-md-4 text-center
 
-Steven Wilkins
+    Simeon Bird
 
-Ananth Tenneti 
+    Carnegie Mellon University
 
-Nicholas Battaglia
+.. container:: panel col-md-4 text-center
+
+    Rupert A Croft
+
+    Carnegie Mellon University
+
+.. container:: panel col-md-4 text-center
+
+    Yu Feng
+
+    Berkeley Center for Cosmological Physics
+
+.. container:: panel col-md-4 text-center
+
+    Tiziana Di Matteo
+
+    Carnegie Mellon University
+
+.. container:: panel col-md-4 text-center
+
+    Ananth Tenneti 
+
+    Carnegie Mellon University
+
+.. container:: panel col-md-4 text-center
+
+    Steven Wilkins
+    
+    University of Sussex
+
