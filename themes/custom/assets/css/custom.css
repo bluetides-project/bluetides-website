@@ -1,5 +1,6 @@
 body {
     font-size: 18px;
+    overflow-y: scroll;
 }
 .panel {
   margin-bottom: 21px;

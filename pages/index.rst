@@ -6,17 +6,21 @@
 BlueTides Simulation
 ====================
 
-BlueTides was run on the BlueWaters super computer at NCSA from :math:`z=99` to :math:`z=8.0`
-
-It is the largest hydrodynamic simulation ever performed at high redshift. 
-
 .. .. class:: affix col-md-pull-1
 .. .. contents:: 
 ..    Table of contents
 
 .. container:: row
 
-    .. container:: panel col-md-12
+    .. container:: col-md-6
+
+        BlueTides was run on the BlueWaters super computer at 
+        `NCSA <https://bluewaters.ncsa.illinois.edu/>`_ with an allocation of 2.6 million node-hours.
+
+        It simulated the universe from :math:`z=99` to :math:`z=8.0`.
+
+        Bluetides is the largest hydrodynamic simulation ever performed at such high redshift. 
+
 
         .. class:: panel-heading h4
 
@@ -34,6 +38,13 @@ It is the largest hydrodynamic simulation ever performed at high redshift.
         |OpenMP threads        |  8                                           |
         +----------------------+----------------------------------------------+
 
+    .. class:: col-md-6
+    .. image:: /galleries/bluetides/BTvsBoRG.png
+        :alt: Field of View of BlueTides at z=8
+        :align: right
+        :width: 500px
+
+----------------------------------------------------------------
 
 .. container:: row
 

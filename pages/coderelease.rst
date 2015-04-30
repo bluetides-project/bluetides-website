@@ -6,9 +6,12 @@
 Source Code
 ===========
 
-The source code behind BlueTides is MP-Gadget3. 
+The source code behind BlueTides is MP-Gadget. 
 
-We are in the process of removing vaguely licensed code.
+A large portion of unused source code in MP-Gadget were inherited from Gadget3, and
+are not explicitly licensed as GPL. 
 
-The code is available by request due to license issues. 
+We are making an effort to remove these source code before a full GPL licensed release.
+
+The current version of code is available by request. Please contact Yu Feng at https://github.com/rainwoodman/.
 

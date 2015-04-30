@@ -9,20 +9,20 @@
 
         Publications
 
-    - Petascale cosmology: simulation of structure formation,
-      R. Croft, T. Di Matteo, N. Khandai, Y. Feng, Computing in Science and Engineering, 2015, Volume 17, Issue 2, DOI:10.1109/MCSE.2015.5
+    - *Petascale cosmology: simulation of structure formation*
+      R. Croft, T. Di Matteo, N. Khandai, Y. Feng, Computing in Science and Engineering, 2015, Volume 17, Issue 2, `DOI:10.1109/MCSE.2015.5 <http://ieeexplore.ieee.org/xpl/articleDetails.jsp?reload=true&arnumber=7006381>`_
 
-    - Sorting At Scale on BlueWaters
+    - *Sorting At Scale on BlueWaters*
       Y. Feng, M. Straka, R. Croft, T. Di Matteo, 2015, Proceedings of Cray User Group Conference 2015; best paper finalist.
 
-    - MP-Gadget: Gadget with half of million CPUs
-      Y. Feng, T. Di Matteo, R. Croft, 2015, in prep
+    - *MP-Gadget: Gadget with half of million CPUs*
+      Y. Feng, T. Di Matteo, R.A.C. Croft, 2015, in prep
 
-    - The formation of Milky Way-mass disk galaxies in the first 500 million years of a cold dark matter universe
+    - *The formation of Milky Way-mass disk galaxies in the first 500 million years of a cold dark matter universe*
       Y. Feng, T. Di Matteo, R.A.C. Croft, A. Tenneti, S. Bird, N. Battaglia, S. Wilkins, 2015, APJ Letters, submitted
       http://arxiv.org/abs/1504.06618
 
-    - BlueTides: First galaxies and reionization; 
+    - *BlueTides: First galaxies and reionization*
       Y. Feng, T. Di Matteo, R.A.C. Croft, S. Bird, N. Battaglia, S. Wilkins; 2015, Monthly Notice of Royal Astronomical Society, submitted  http://arxiv.org/abs/1504.06619
 
 .. container:: panel
