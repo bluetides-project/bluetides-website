@@ -38,12 +38,12 @@ BlueTides Simulation
         |OpenMP threads        |  8                                           |
         +----------------------+----------------------------------------------+
 
-    .. class:: col-md-6
-    .. image:: /galleries/bluetides/BTvsBoRG.png
-        :alt: Field of View of BlueTides at z=8
-        :align: right
-        :width: 500px
+    .. container:: col-md-6
 
+        .. image:: /galleries/bluetides/BTvsBoRG.png
+            :alt: Field of View of BlueTides at z=8
+            :align: right
+        
 ----------------------------------------------------------------
 
 .. container:: row

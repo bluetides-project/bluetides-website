@@ -15,9 +15,9 @@ SITE_URL = "http://bluetides-simulation.org/"
 # If not set, defaults to SITE_URL
 # BASE_URL = "http://getnikola.com/"
 BLOG_EMAIL = "yfeng1@berkeley.edu"
-BLOG_DESCRIPTION = "BlueTides: Simulating the Universe at the first billion years "
+BLOG_DESCRIPTION = "BlueTides: Simulating the Universe at the first 500 million years "
 LOGO_URL = ""
-SHOW_BLOG_TITLE = False
+SHOW_BLOG_TITLE = True
 # Nikola is multilingual!
 #
 # Currently supported languages are:
@@ -64,9 +64,8 @@ TRANSLATIONS = {
 # You should provide a key-value pair for each used language.
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ('/', 'About BlueTides'),
-        ('/datarelease', 'Data Release'),
-        ('/coderelease', 'Code Release'),
+        ('/datarelease', 'Data'),
+        ('/coderelease', 'Code'),
         ('/people', 'People'),
         ('/publications', 'Publications'),
         ('/donate', 'Acknowledgements'),
