@@ -455,8 +455,8 @@ PRETTY_URLS = True
 
 # Social buttons. This is sample code for AddThis (which was the default for a
 # long time). Insert anything you want here, or even make it empty.
-SOCIAL_BUTTONS_CODE = ""
-# SOCIAL_BUTTONS_CODE = """
+#SOCIAL_BUTTONS_CODE = ""
+#SOCIAL_BUTTONS_CODE = """
 # <!-- Social buttons -->
 # <div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style addthis_default_style addthis_label_style addthis_32x32_style">
 # <a class="addthis_button_more">Share</a>
@@ -470,6 +470,13 @@ SOCIAL_BUTTONS_CODE = ""
 # <!-- End of social buttons -->
 # """
 
+#SOCIAL_BUTTONS_CODE = """<div id="shareNice" data-share-label="Share"
+#    data-color-scheme="black" data-icon-size="32" data-panel-bottom="plain"
+#    data-services="plus.google.com,facebook.com,email,twitter.com"
+#    style="position: fixed; right: 20px; top: 60px;"></div>"""
+
+
+#BODY_END = """<script src="http://graingert.co.uk/shareNice/code.js"></script>"""
 # Hide link to source for the posts?
 SHOW_SOURCELINK = True
 # Copy the source files for your pages?
@@ -530,8 +537,8 @@ COPY_SOURCES = False
 # <input type="text" id="tipue_search_input">
 # </span>"""
 #
-BODY_END = """
-"""
+#BODY_END = """
+#"""
 # BODY_END = """
 # <script type="text/javascript" src="/assets/js/tipuesearch_set.js"></script>
 # <script type="text/javascript" src="/assets/js/tipuesearch.js"></script>
