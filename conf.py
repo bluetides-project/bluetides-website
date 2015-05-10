@@ -64,6 +64,7 @@ TRANSLATIONS = {
 # You should provide a key-value pair for each used language.
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
+        ('/viewer', 'Visualize'),
         ('/datarelease', 'Data'),
         ('/coderelease', 'Code'),
         ('/people', 'People'),
@@ -125,7 +126,8 @@ PAGES = (
 # The format is a dictionary of "source" "relative destination".
 # Default is:
 FILES_FOLDERS = {'images': 'images',
-                 'files': 'files'}
+                 'files': 'files',
+                 'viewer' : 'viewer'}
 
 # Which means copy 'files' into 'output'
 
@@ -455,7 +457,7 @@ PRETTY_URLS = True
 
 # Social buttons. This is sample code for AddThis (which was the default for a
 # long time). Insert anything you want here, or even make it empty.
-#SOCIAL_BUTTONS_CODE = ""
+SOCIAL_BUTTONS_CODE = ""
 #SOCIAL_BUTTONS_CODE = """
 # <!-- Social buttons -->
 # <div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style addthis_default_style addthis_label_style addthis_32x32_style">
