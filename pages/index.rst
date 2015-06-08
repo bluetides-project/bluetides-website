@@ -6,10 +6,6 @@
 BlueTides Simulation
 ====================
 
-.. .. class:: affix col-md-pull-1
-.. .. contents:: 
-..    Table of contents
-
 .. container:: row
 
     .. container:: col-md-6
@@ -40,9 +36,11 @@ BlueTides Simulation
 
     .. container:: col-md-6
 
-        .. image:: /galleries/bluetides/BTvsBoRG.png
-            :alt: Field of View of BlueTides at z=8
-            :align: right
+        .. slides::
+
+            /galleries/bluetides/BlueTidesZoomSmall.png
+            /galleries/bluetides/BTvsBoRG.png
+
         
 ----------------------------------------------------------------
 
