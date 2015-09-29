@@ -18,3 +18,5 @@ We will release the BlueTides data to public.
 
 Check back later.
 
+The files are in `bigfile` format, which can be accessed either via 
+a python binding or directly via the binary files. (http://github.com/rainwoodman/bigfile )
