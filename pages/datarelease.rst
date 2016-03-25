@@ -1,6 +1,6 @@
 .. title: Data Release
 .. slug: datarelease
-.. tags: 
+.. tags: mathjax
 .. description: 
 
 Data Release
@@ -15,6 +15,25 @@ We will release the BlueTides data to public.
 
 - Full sample of star and black hole particles
 
+Units
+-----
+
+- :math:`a` is the scaling factor. Related to Redshift by :math:`a = 1 / (z+1)`.
+
+
++------------------------+-------------------+
+| Mass                   | 1e10 Msun/h       |
++------------------------+-------------------+
+| Time                   | 980 Myear/h       |
++------------------------+-------------------+
+| Comoving Distance      | 1 Kpc/h           |
++------------------------+-------------------+
+| Comoving Velocity      | km/s / :math:`a^2`|
++------------------------+-------------------+
+| SFR                    | Msun / year       |
++------------------------+-------------------+
+| BH AccretionRate       | Mass / Time       |
++------------------------+-------------------+
 
 Check back later.
 
