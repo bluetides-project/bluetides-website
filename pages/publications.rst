@@ -19,11 +19,25 @@
       Y. Feng, T. Di Matteo, R.A.C. Croft, 2015, in prep
 
     - *The formation of Milky Way-mass disk galaxies in the first 500 million years of a cold dark matter universe*
-      Y. Feng, T. Di Matteo, R.A.C. Croft, A. Tenneti, S. Bird, N. Battaglia, S. Wilkins, 2015, APJ Letters, submitted
+      Y. Feng, T. Di Matteo, R.A.C. Croft, A. Tenneti, S. Bird, N. Battaglia, S. Wilkins, 2015, APJ Letters
       http://arxiv.org/abs/1504.06618
 
     - *BlueTides: First galaxies and reionization*
-      Y. Feng, T. Di Matteo, R.A.C. Croft, S. Bird, N. Battaglia, S. Wilkins; 2015, Monthly Notice of Royal Astronomical Society, submitted  http://arxiv.org/abs/1504.06619
+      Y. Feng, T. Di Matteo, R.A.C. Croft, S. Bird, N. Battaglia, S. Wilkins; 2015, Monthly Notices of Royal Astronomical Society, http://arxiv.org/abs/1504.06619
+
+    - *Monsters in the Dark: Predictions for Luminous Galaxies in the Early Universe from the BlueTides Simulation*
+      Waters, Dacen; Wilkins, Stephen; Di Matteo, Tiziana; Feng, Yu; Croft, Ruper; Nagai, Daisuke, http://arxiv.org/abs/1604.00413
+
+    - *The Lyman-continuum photon production efficiency in the high-redshift Universe*
+      Wilkins, Stephen M.; Feng, Yu; Di-Matteo, Tiziana; Croft, Rupert; Stanway, Elizabeth R.; Bouwens, Rychard J.; Thomas, Peter, 2016 Monthly Notices of Royal Astronomical Society,
+      http://arxiv.org/abs/1512.03214
+
+    - *Forecasts for the WFIRST High Latitude Survey using the BlueTides Simulation*
+      Waters, Dacen; Di Matteo, Tiziana; Feng, Yu; Wilkins, Stephen M.; Croft, Rupert A. C.  submitted to MNRAS May 13th, 2016 http://adsabs.harvard.edu/abs/2016arXiv160505670W
+
+    - *The Photometric Properties of Galaxies in the Early Universe*
+      Wilkins, Stephen M.; Feng, Yu; Di-Matteo, Tiziana; Croft, Rupert; Stanway, Elizabeth R.; Bunker, Andrew; Waters, Dacen; Lovell, Christopher, accepted in MNRAS http://adsabs.harvard.edu/abs/2016arXiv160505044W
+
 
 .. container:: panel
 
