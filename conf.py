@@ -11,6 +11,8 @@ BLOG_TITLE = "BlueTides Simulation"
 # This is the main URL for your site. It will be used
 # in a prominent link
 SITE_URL = "http://bluetides-project.org/"
+URL_TYPE = 'rel_path'
+
 # This is the URL where nikola's output will be deployed.
 # If not set, defaults to SITE_URL
 # BASE_URL = "http://getnikola.com/"
