@@ -7,8 +7,12 @@ env:
 before_install:
     - pip install nikola
     - pip install ghp-import
+
 install:
     - nikola build
+
+script:
+    - echo "Hello"
 
 after_success:
     - bash ./update-ghpages.sh
