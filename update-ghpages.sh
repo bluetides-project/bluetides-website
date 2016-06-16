@@ -4,10 +4,9 @@ git config --global user.name "Travis"
 
 git remote add writable https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG} > /dev/null
 git fetch writable
-git fetch origin
 
 cd output/
-ghp-import -p -m "Travis auto commit for $TRAVIS_COMMIT" -r writable . || exit 1
+python ../ghp-import -p -m "Travis auto commit for $TRAVIS_COMMIT" -r writable . || exit 1
 ) || exit 1
 
 # 1>/dev/null 2> /dev/null || exit 1
