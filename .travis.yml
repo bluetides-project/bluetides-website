@@ -16,7 +16,6 @@ install:
     - source activate test
     - conda install -y lxml requests Pygments unidecode Pillow mako natsort docutils  python-dateutil MarkupSafe six cloudpickle 
     - pip install nikola
-    - pip install ghp-import
     - nikola build
 script:
     - echo "Hello"
