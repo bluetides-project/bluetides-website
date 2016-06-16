@@ -13,10 +13,12 @@ before_install:
     - ./miniconda.sh -b -p $HOME/miniconda
     - export PATH=$HOME/miniconda/bin:$PATH
     - conda update --yes conda
-    - pip install nikola
-    - pip install ghp-import
 
 install:
+    - conda create --yes -n test python=$TRAVIS_PYTHON_VERSION
+    - source activate test
+    - pip install nikola
+    - pip install ghp-import
     - nikola build
 
 script:
