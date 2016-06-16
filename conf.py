@@ -64,6 +64,7 @@ TRANSLATIONS = {
 # You should provide a key-value pair for each used language.
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
+        ('/sdcvcalc', 'Calculator'),
         ('/viewer', 'Visualize'),
         ('/datarelease', 'Data'),
         ('/coderelease', 'Code'),
@@ -127,7 +128,9 @@ PAGES = (
 # Default is:
 FILES_FOLDERS = {'images': 'images',
                  'files': 'files',
-                 'viewer' : 'viewer'}
+                 'viewer' : 'viewer',
+                 'sdcvcalc' : 'sdcvcalc',
+}
 
 # Which means copy 'files' into 'output'
 
