@@ -2,10 +2,9 @@ language: python
 
 python:
     - 3.4
-
 env:
     global:
-        - secure: "pC2X49Av9OlrMuMJ8ypmRe3t03hc9Kn2u43syoG/P2NkSvPi8FKZqnTNlDk5UaTeZ3wnWDTM/PcmBqGqlyyMNv85+v/+yej1igzHT4kaI7kr0s0yu8o5lklfQMx9lSHNlj2JD/SRLrw/PIbBUDGGTWpVxiWw6m+AviaxAF9ULU36seDVv6Zt+u1/ApuSz34VKie+z7WCNs64mK2h47sJks5XHMGDjJ9Svrmjx2dh+93kFxL1kkdSe8GqRZ+Otzb5Zt/Ip7kI1z5BrFE0tD8mHwBWC21vZuFCv70DwPY47Hn84wyUXtqzy9K+2NulqW2Iz359bkfkPe/+QHoeNMgvLmilLbzUrR5KNPdI/hDnvu62ybwNWyrThDjd1j6vJdD6gNJyLhj3+BuwgrmdxIUADKR4Sh/Q297AJsCtRBCOvALNc81By8By1/bv9tr9pJJno4fRpyLqeUb8UVlvZS+j1+sd1d4C4sQNjOXkK4Jc+3t0Lfv2DL7OYMzBpmsiLkCgdjySJHrUrX0tclEJ+lQ6dGccjrGG1muAiePstmPH5GkeTYJMuU1hOQ8H7KEkDpT12ZUJFttyq3RlB34vQhNF0dzYlHk+GaWJhxlG3mHrCdLZFWyakX87NpaS1OmB2gv4L9TriLi71jg1fs0XUnE1auD+10XKr8Lg7rc3LshrGB4="
+       - secure: aB1ZWzwJKqyqX0945buP+HFUw8ccjm82M899wDCtQ1YqWuWJrXiNZEpr4f6T/HG7K89sLywXtOvpyvTvvcqLk4bZ8UDAZnw2c+4newq0QFjAgWFedp3Igvwqox/KxdXVQAv527DPThOW1X98swQVfhoUe09Ch2/8CrUwvPh1mPbnA8b8XpJh1sWTJSo0TIIh2ndx+QljweJhhNajzMiLxnmrh14Fdk0xZSI5ycWB0FVmMGaDz3vu/f1baFfc0mqdGJhUPQ/oOWdjxUk+LolveDLbt3gClxlZNlF/NDBBqdIcdxV44pEfXMzeFvUkQhsF/SI4hymxoTNXu4TObw2vcx4Vgyf/MbLhUOP+4amjvggdya8TsODtgA0M4x+mos6kvtVeW2mX3LGDJLX0dwiO2pNdZJQb7Zp0EyIP8r1C3UCQp6FBs2i3elSweHlA4IHvsaL02qHJ5UX467CVsqb4M2/5RhMs9iz53oXb0HdTabkl+pSAf8NJKOjff1HInf118bVA+jTyxf4VNB1FPLU2Gwi5GhIAuykM9k3U7bdUSG9ebHkQWUoDYKt74rq74mkoPmVFp49IZy7PVqM6bwSUPM8FKxD+WxRhPehBLcxcrRltPLrSh79oBrZtPaPx/O67H4U1+B/4wm1qw3wFzglBe/WADObjxhsixl0eTJKMr+o=
 
 before_install:
     - wget http://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh -O miniconda.sh
@@ -13,16 +12,15 @@ before_install:
     - ./miniconda.sh -b -p $HOME/miniconda
     - export PATH=$HOME/miniconda/bin:$PATH
     - conda update --yes conda
-
 install:
     - conda create --yes -n test python=$TRAVIS_PYTHON_VERSION
     - source activate test
+    - conda install lxml
     - pip install nikola
     - pip install ghp-import
     - nikola build
-
 script:
     - echo "Hello"
-
 after_success:
     - bash ./update-ghpages.sh
+

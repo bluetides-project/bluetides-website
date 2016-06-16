@@ -5,4 +5,4 @@ git remote add writable https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG} > /de
 cd output/
 ghp-import -p -m "Travis auto commit" -r writable .
 
-echo Deployed to http://`dirname ${TRAVIS_REPO_SLUG}`.github.io/`basename ${TRAVIS_REPO_SLUG}/
+echo Deployed to http://`dirname ${TRAVIS_REPO_SLUG}`.github.io/`basename ${TRAVIS_REPO_SLUG}`
