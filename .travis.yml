@@ -15,7 +15,7 @@ before_install:
 install:
     - conda create --yes -n test python=$TRAVIS_PYTHON_VERSION
     - source activate test
-    - conda install -y lxml requests Pygments PyRSS2Gen unidecode Pillow Yapsy mako natsort docutils doit logbook husl blinker python-dateutil MarkupSafe six cloudpickle pyinotify
+    - conda install -y lxml requests Pygments unidecode Pillow mako natsort docutils  python-dateutil MarkupSafe six cloudpickle 
     - pip install nikola
     - pip install ghp-import
     - nikola build
