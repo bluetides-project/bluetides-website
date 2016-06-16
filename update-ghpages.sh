@@ -8,6 +8,8 @@ git fetch origin
 
 cd output/
 ghp-import -p -m "Travis auto commit for $TRAVIS_COMMIT" -r writable . || exit 1
-) 1>/dev/null 2> /dev/null || exit 1
+) || exit 1
+
+# 1>/dev/null 2> /dev/null || exit 1
 
 echo Deployed to http://`dirname ${TRAVIS_REPO_SLUG}`.github.io/`basename ${TRAVIS_REPO_SLUG}`
