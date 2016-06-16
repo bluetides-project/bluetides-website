@@ -16,6 +16,8 @@ URL_TYPE = 'rel_path'
 # This is the URL where nikola's output will be deployed.
 # If not set, defaults to SITE_URL
 # BASE_URL = "http://getnikola.com/"
+USE_BASE_TAG = False
+
 BLOG_EMAIL = "yfeng1@berkeley.edu"
 BLOG_DESCRIPTION = "BlueTides: Simulating the Universe at the first 500 million years "
 LOGO_URL = ""
