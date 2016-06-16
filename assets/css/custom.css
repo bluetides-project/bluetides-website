@@ -3,6 +3,10 @@ body {
     overflow-y: scroll;
 }
 
+div.body-content {
+    margin-top: 2em;
+}
+
 .panel {
   margin-bottom: 21px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.05);

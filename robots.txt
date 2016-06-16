@@ -1,2 +1,4 @@
-Sitemap: http://bluetides-simulation.org/sitemapindex.xml
+Sitemap: http://bluetides-project.org/sitemapindex.xml
 
+User-Agent: *
+Host: bluetides-project.org

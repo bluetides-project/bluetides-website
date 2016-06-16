@@ -1,55 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
-  <loc>http://bluetides-simulation.org/</loc>
-  <lastmod>2015-04-30</lastmod>
+  <loc>http://bluetides-project.org/</loc>
+  <lastmod>2016-06-16T17:29:00Z</lastmod>
  </url>
  <url>
-  <loc>http://bluetides-simulation.org/archive/archive.html</loc>
-  <lastmod>2015-04-30</lastmod>
+  <loc>http://bluetides-project.org/archive/archive.html</loc>
+  <lastmod>2016-06-16T17:29:00Z</lastmod>
  </url>
  <url>
-  <loc>http://bluetides-simulation.org/categories/</loc>
-  <lastmod>2015-04-30</lastmod>
+  <loc>http://bluetides-project.org/categories/</loc>
+  <lastmod>2015-04-30T17:23:00Z</lastmod>
  </url>
  <url>
-  <loc>http://bluetides-simulation.org/coderelease/</loc>
-  <lastmod>2015-04-30</lastmod>
+  <loc>http://bluetides-project.org/coderelease/</loc>
+  <lastmod>2015-04-30T17:23:00Z</lastmod>
  </url>
  <url>
-  <loc>http://bluetides-simulation.org/datarelease/</loc>
-  <lastmod>2015-04-30</lastmod>
+  <loc>http://bluetides-project.org/datarelease/</loc>
+  <lastmod>2015-04-30T17:23:00Z</lastmod>
  </url>
  <url>
-  <loc>http://bluetides-simulation.org/donate/</loc>
-  <lastmod>2015-04-30</lastmod>
+  <loc>http://bluetides-project.org/donate/</loc>
+  <lastmod>2015-04-30T17:23:00Z</lastmod>
  </url>
  <url>
-  <loc>http://bluetides-simulation.org/galleries/</loc>
-  <lastmod>2015-04-30</lastmod>
+  <loc>http://bluetides-project.org/galleries/</loc>
+  <lastmod>2015-04-30T17:23:00Z</lastmod>
  </url>
  <url>
-  <loc>http://bluetides-simulation.org/galleries/bluetides/</loc>
-  <lastmod>2015-04-30</lastmod>
+  <loc>http://bluetides-project.org/galleries/bluetides/</loc>
+  <lastmod>2015-06-08T21:01:00Z</lastmod>
  </url>
  <url>
-  <loc>http://bluetides-simulation.org/news/</loc>
-  <lastmod>2015-04-30</lastmod>
+  <loc>http://bluetides-project.org/news/</loc>
+  <lastmod>2015-04-30T17:23:00Z</lastmod>
  </url>
  <url>
-  <loc>http://bluetides-simulation.org/people/</loc>
-  <lastmod>2015-04-30</lastmod>
+  <loc>http://bluetides-project.org/people/</loc>
+  <lastmod>2015-04-30T17:23:00Z</lastmod>
  </url>
  <url>
-  <loc>http://bluetides-simulation.org/publications/</loc>
-  <lastmod>2015-04-30</lastmod>
+  <loc>http://bluetides-project.org/publications/</loc>
+  <lastmod>2015-04-30T17:23:00Z</lastmod>
  </url>
  <url>
-  <loc>http://bluetides-simulation.org/talks/</loc>
-  <lastmod>2015-04-30</lastmod>
+  <loc>http://bluetides-project.org/sdcvcalc/</loc>
+  <lastmod>2016-06-16T17:29:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://bluetides-project.org/viewer/</loc>
+  <lastmod>2015-06-08T21:01:00Z</lastmod>
  </url>
 </urlset>

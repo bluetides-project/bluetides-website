@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>The BlueTides Simulation</title>
+   <style type="text/css">
+      body {
+         margin: 0;
+         padding: 0;
+         font-family: Verdana, Helvetica, Arial, sans-serif;
+         font-size: 9pt;
+      }
+
+      .overlayPanel {
+         display: none;
+         position: absolute;
+         border: 1px solid black;
+         padding: 10px;
+         background-color: rgba(0, 0, 0, .6);
+         color: white;
+         z-index: 1000;
+      }
+      #socialAwareness {
+        z-index:500;
+        position:absolute;
+        width:100px; 
+        left:10px;
+        bottom:10px;
+        display:inline;
+      }
+
+      #controlPanel {
+         color: #fff;
+         display: inline;
+         top: 5px;
+         right: 5px;
+         width: auto;
+         height: auto;
+      }
+      #controlPanel > div {
+         margin-top: 10px;
+         margin-bottom: 10px;
+      }
+
+      #interestPointInfo {
+         display: inline;
+         top: 5px;
+         left: 5px;
+         width: auto;
+         max-width: 450px;
+         font-family: monospace;
+         max-height: 80%;
+         overflow-y: scroll;
+      }
+      #interestPointDescription {
+         display: block;
+      }
+
+      #interestPointInfo ul {
+         list-style-type: none;
+      }
+      #interestPointInfo li {
+         list-style-type: none;
+      }
+
+      #gigapanViewer {
+         position: absolute;
+         top: 0;
+         bottom: 0;
+         left: 0;
+         right: 0;
+         margin: 0;
+         padding: 0;
+         background-color: black;
+      }
+
+      .interestPoint {
+         cursor: pointer;
+         width: 24px;
+         height: 24px;
+         background: url('images/galaxy.png') no-repeat;
+      }
+      .interestPoint.Active {
+         cursor: pointer;
+         width: 24px;
+         height: 24px;
+         background: url('images/galaxy_active.png') no-repeat;
+      }
+
+      .interestPoint.Central {
+         cursor: pointer;
+         width: 24px;
+         height: 24px;
+         background: url('images/central_galaxy.png') no-repeat;
+      }
+      .interestPoint.Central.Active {
+         cursor: pointer;
+         width: 24px;
+         height: 24px;
+         background: url('images/central_galaxy_active.png') no-repeat;
+      }
+
+      .Button>a {
+           text-decoration: none; 
+           color: white;
+       }
+      .Button>a:hover {
+           text-decoration: none; 
+           color: yellow;
+       }
+      .Button:hover {
+           text-decoration: none; 
+           color: yellow;
+       }
+      .Button>img {
+        width: 11px;
+        height: 11px;
+        padding: 0px;
+        border: 0px;
+        margin: 0px;
+      }
+      .overlayPanel>.Button {
+         font-weight: bold;
+         font-family: monospace;
+         font-size: 12px;
+         padding: 2px;
+         height: 13px;
+         text-align: center;
+         border: 1px solid white;
+         background-color: rgba(255, 255, 255, 0.2);
+         float: right;
+         cursor: pointer;
+      }
+   </style>
+   <script language="JavaScript" type="text/javascript" src="http://platform.twitter.com/widgets.js"> </script>
+   <script language="JavaScript" type="text/javascript" src="https://connect.facebook.net/en_US/all.js#xfbml=1"></script>
+   <script language="JavaScript" type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+   <script language="JavaScript" type="text/javascript"
+       src="datasource.js"></script>
+   <script language="JavaScript" type="text/javascript" src="/assets/js/jquery.min.js"></script>
+   <script language="JavaScript" type="text/javascript" src="seadragon/seadragon.js"></script>
+   <script language="JavaScript" type="text/javascript" src="org/gigapan/seadragon/GigapanTileSource.js"></script>
+   <script language="JavaScript" type="text/javascript" src="org/gigapan/seadragon/SeadragonUtils.js"></script>
+   <script language="JavaScript" type="text/javascript" src="sprintf.js"></script>
+   <script language="JavaScript" type="text/javascript" src="bluetides.js"></script>
+
+   <script language="JavaScript" type="text/javascript"> 
+    var mlg;
+    var mlt;    
+    var monitor;
+
+    var MassMin = 0.1;
+    var Nmax = 40;
+    var tags = [];
+    var currentSnapId = snapshots[0].snapid;
+
+    function currentSnapshot() {
+        var control = $("#snapshotSelect");
+        return snapshots[parseInt(control.val())];
+    }
+
+    function selectInterestPoint(mlt, index) {
+        var id = mlt.getAttr("id", index);
+        viewObject(id, "subhalo",
+            function() {
+                highlightObjects(id, "subhalo");
+            }
+        );
+    }
+
+    function highlightObjects(selid, objtype) {
+        var i;
+        var content;
+        var id;
+        for(i = 0; i < mlt.length; i ++) {
+            content = mlt.getAttr("content", i);
+            id = mlt.getAttr("id", i);
+            if((id == selid && objtype == "subhalo") ||
+                (content.groupid == selid && objtype == "group")
+            ) {
+                mlt.getElement(i).addClass("Active");
+            } else {
+                mlt.getElement(i).removeClass("Active");
+            }
+        }
+    }
+
+    function deactivateAll() {
+        var i;
+        var content;
+        for(i = 0; i < mlt.length; i ++) {
+            content = mlt.getAttr("content", index);
+            mlt.getElement(i).removeClass("Active");
+        }
+    }
+
+    function viewObject(id, objtype, viewswitched) {
+        mbiibrowser.AjaxLoadObject("json", objtype, currentSnapshot().snapid, id,
+            function(data) {
+                $("#interestPointDescription").html(data);
+                $("#interestPointInfo").show();
+            }, monitor
+        );
+        $("#interestPointOverlayCloseButton").bind("click",
+            function() {
+                $("#interestPointInfo").hide();
+                $("#interestPointOverlayCloseButton").unbind("click");
+            }
+        );
+
+        mbiibrowser.AjaxLoadObject("json", objtype, currentSnapshot().snapid, id,
+            function(data) {
+                mlg.view(data[0].bounds);
+                if(viewswitched) viewswitched();
+            }, monitor
+        );
+    }
+
+    var demoing = false;
+    function triggerDemo() {
+        var control = $("#demoButton");
+        function demo() {
+            id = Math.floor(Math.random() * 100);
+            viewObject(id, 'group',
+                function() {
+                    redoSearch(function() { 
+                        highlightObjects(id, 'group');
+                        if(demoing)
+                            window.setTimeout(demo, 10000);
+                    });
+                }
+            );
+        }
+        if(demoing) {
+            control.prop('value', "Demo");
+            demoing = false;
+        } else {
+            control.prop('value', "Stop Demo");
+            demoing = true;
+            window.setTimeout(demo);
+        }
+    }
+
+    function jumptoGroup() {
+        var control = $("#SubHaloID");
+        var objtype;
+        var gid;
+        if(control.val().length > 0) {
+            objtype = "group";
+            gid = parseInt(control.val());
+        }
+        viewObject(gid, objtype,
+            function() {
+                redoSearch(function() { 
+                    highlightObjects(gid, 'group');
+                });
+            }
+        );
+    }
+    
+
+    function changeSnapshot() {
+        var snapshot = currentSnapshot()
+        var layerselect = $("#snapshotLayerSelect");
+        var i;
+        $("#snapshotLayerSelect").unbind("change", changeLayer);
+        var oldlayer = parseInt(layerselect.val());
+        layerselect.empty();
+        for(i = 0; i < snapshot.layers.length; i ++) {
+            layerselect.append("<option value=\"" + i +"\">" + snapshot.layers[i].type + "</option>");
+        }
+        layerselect.val(oldlayer);
+        $("#snapshotLayerSelect").bind("change", changeLayer);
+        mlg.reopen(snapshot.layers, function() {
+            changeLayer();
+            window.setTimeout(redoSearch);
+        });
+    }
+
+    function changeLayer () {
+        var control = $("#snapshotLayerSelect");
+        var sel = parseInt(control.val());
+        console.log("change to layer " + sel);
+        mlg.switchLayer(sel);
+        var snapshot = currentSnapshot();
+    }
+
+    function changeCut() {
+        var MassMinTitle = $("#MassMinTitle");
+        console.log("change to MassMin " + MassMin);
+        MassMinTitle.html(sprintf("%.6f",  MassMin));
+
+        var i;
+        for(i = 0; i < tags.length && i < Nmax; i ++) {
+            if (tags[i].content.mass < MassMin) break;
+        }
+        mlt.setDesc(tags.slice(0, i));
+        console.log(tags.slice(0, i));
+        mlg.drawTags();
+    }
+
+    function redoSearch(callback) {
+        mlg.saveBounds();
+        var snapshot = currentSnapshot();
+        mbiibrowser.AjaxLoadTags(
+            snapshot.snapid,
+            mlg.bounds,
+            500, 0.1, function(newtags) {
+                tags = newtags;
+                changeCut();
+                if(callback) callback();
+            }, monitor
+        );
+    }
+
+    $(document).ready(function() {
+        monitor = new mbiibrowser.ProgressMonitor(
+            $('#working'),
+            $('<div/>'),
+            $('#failed'));
+
+        var scontrol = $("#snapshotSelect");
+        scontrol.empty();
+        for(i = 0; i < snapshots.length; i ++) {
+            scontrol.append($(sprintf("<option value=\"%d\">%03d</option>", 
+                 i, snapshots[i].snapid)));
+        }
+        $("#about").click(function() {
+                $("#interestPointDescription").html($("#aboutText").html());
+                $("#interestPointInfo").show();
+                $("#interestPointOverlayCloseButton").bind("click",
+                    function() {
+                        $("#interestPointInfo").hide();
+                        $("#interestPointOverlayCloseButton").unbind("click");
+                    }
+                );
+             }
+         );
+        /* do not use 'change' event: it is not always properly emitted */
+        
+        $("#snapshotSelect")
+                .change(function() {
+                    window.setTimeout(changeSnapshot);
+                });
+        $("#NmaxSlider")
+                .change(function() {
+                    Nmax = parseInt($("#NmaxSlider").val());
+                    window.setTimeout(changeCut);
+                });
+
+        $("#MassMinSlider")
+                .click(function() {
+                    MassMin = Math.pow(10, parseFloat($("#MassMinSlider").val()) - 10);
+                    console.log(MassMin)
+                    window.setTimeout(changeCut);
+                });
+
+
+        $("#redoSearch").click(function() {
+                    window.setTimeout(redoSearch);
+                });
+
+        $("#jumptoGroup").click(function() {
+                    window.setTimeout(jumptoGroup);
+                });
+
+        $("#demoButton").click(function() {
+                    window.setTimeout(triggerDemo);
+                });
+
+        units = [
+            {str: 'pc/h', factor:0.001},
+            {str: 'Kpc/h', factor:1.0},
+            {str: 'Mpc/h', factor:1000.0},
+            {str: 'Gpc/h', factor:1000000.0},
+        ];
+
+        var scale = new mbiibrowser.Scale($("#gigapanViewer"), units, 10000.);
+        mlg = new mbiibrowser.MultiLayerGigapan($("#gigapanViewer"), scale);
+        mlt = new mbiibrowser.MultiLayerTags("interestPoint", selectInterestPoint);
+        mlg.addTags(mlt);
+
+        $(window).resize(function() {
+            mlg.resize($(window).height());
+        });
+
+        window.setTimeout(function() {
+            mlg.resize($(window).height());
+            changeSnapshot();
+        }); 
+        $('#about').click();
+    });
+
+   </script>
+</head>
+<body>
+<div id="fb-root"></div>
+<div id="controlPanel" class="overlayPanel">
+   <div class="Button" id="about" title="About BlueTides Browser">
+        <a title="About">About</a></div> 
+
+   <div class="Button" id="about" title="Home">
+        <a href="/">Home</a>
+    </div> 
+
+   <div class="Button" id="working" style='color:red'><img
+src="/images/loading.png" alt="Loading"/></div> 
+   <div class="Button" id="failed" style='color:red'>Failed</div> 
+
+   <div style="font-weight:bold;font-size:1.1em;"> BlueTides </div>
+   <hr style="width:100%;"/>
+    <div>
+    <div>
+    Snapshot:
+    <select id="snapshotSelect">
+    <option value="0" selected></option>
+    </select>
+     Layer: 
+    <select id="snapshotLayerSelect">
+    <option value="0" selected></option>
+    </select>
+    <input id="demoButton" type="button" value="Demo"/> 
+    </div>
+
+    <div> 
+    <input id="jumptoGroup" type="button" value="Jump"/> 
+    <input id="SubHaloID" type="text" value="0" size="6"/>
+    </div>
+
+    <div>
+    <input id="redoSearch" type="button" value="Search"/> (limit to 
+    <input id="NmaxSlider" type="number" min="0" value="40" max="300" size="4"/>
+galaxies )
+    </div>
+
+    <div style='display:none;'>Mass cut : 
+        <span id="MassMinTitle"></span>
+    <input id="MassMinSlider" type="range" min="9" value="10" max="15"
+step="0.01"/> 
+    </div>
+    </div>
+</div>
+
+<div id="interestPointInfo" class="overlayPanel">
+   <div class="Button" id="interestPointOverlayCloseButton" title="Close">Close</div>
+   <div class="Button" id="dataAccessbutton"><a href='/datarelease/' title="Access the Raw data">DataAccess</a></div> 
+   <div style="font-weight:bold;font-size:1.1em;"> About </div>
+   <hr/>
+   <div id="interestPointDescription">
+   </div>
+</div>
+<div id="socialAwareness">
+<g:plusone size="medium" annotation="bubble" data-recommendations="false"></g:plusone>
+<div>
+<a href="https://twitter.com/share" class="twitter-share-button"
+data-url="http://bluetides-project.org/"
+data-lang="en">Tweet</a> 
+</div>
+<div class="fb-share-button" data-href="http://bluetides-project.org"
+data-type="button_count"> </div>
+</div>
+
+<div id="gigapanViewer"> 
+
+</div>
+<div id="aboutText" style="display:none;">
+    <p>
+        This is an interactive viewer of the cosmological simulation
+        BlueTides (<a href="/">Feng et al. MNRAS, submitted, 2015 </a>).  
+        The hydrodynamical simulation uses near 700
+        billion particles (half gas, half dark matter) to track the motion of
+        baryons, dark matter in a 400 Mpc/h (about 2 billion light years)
+        box all the way till z=8, when the universe is about 600 million years old.
+        This tool is based on <a href="http://gigapan.org">Gigapan</a>.
+    </p>
+    <p>
+    <em>In order to provide a visually pleasing number density of galaxies, 
+        we wrapped the simulation box 1600 times into a 10 Mpc/h box.</em>
+    </p>
+    <p>
+
+        The galaxies (subhalos) are labelled with green crosses. 
+        If a galaxy is the central galaxy of the cluster (group), the cross has
+        a circle. Currently selected galaxy is surrounded by a rectangle.
+        We limit the number of galaxies shown to 40 most massive ones, but it
+        can be changed in "Number of Galaxies". 
+    </p>
+    <p> To switch between different snapshots, use the dropdown box "Snapshot".
+        To switch between different layers, use the dropdown box "Layers". 
+        To jump to a cluster, type its ID and click "Jump".
+        To search for galaxies in the current view, click "Search".
+    </p>
+    <p>
+        Click on a label and zoom onto the galaxy. The properties of the
+        galaxy is shown in a pop up. <br/>
+    </p>
+    <p> Yu Feng @ University of California, Berkeley 2015</p>
+</div>
+</body>
+</html>
+
